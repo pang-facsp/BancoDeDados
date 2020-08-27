@@ -1,5 +1,3 @@
-# Banco de Dados
-
 ## Introdução a SQL
 
 Nesta aula veremos um resumo do capítulo 2 do livro texto e começaremos a usar um banco de dados e a interagir com o banco de dados da Oracle usando SQL. Para tanto, vamos criar uma conta na Oracle, acessar o banco de dados aberto da Oracle pela URL https://livesql.oracle.com.

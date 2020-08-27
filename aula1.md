@@ -159,5 +159,5 @@ Portanto, é melhor usar processamento de arquivos quando:
 6. Cite alguns exemplos de restrições de integridade que podem ser aplicadas ao banco de dados do exemplo.
 
 7. Considere o exemplo:
-  a. Se o nome do departamento muda-se de CS \(*Computer Science*\) para CSSE \(*Computer Science and Software Engineering*\), identifique as colunas do banco de dados que teriam de ser modificadas.
+  a. Se o nome do departamento muda de CS \(*Computer Science*\) para CSSE \(*Computer Science and Software Engineering*\), identifique as colunas do banco de dados que teriam de ser modificadas.
   b. Você consegue propor uma mudança na estrutura do BD para que apenas uma coluna fosse modificada?
