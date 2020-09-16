@@ -106,7 +106,7 @@ Bookbiz é um BD para uma pequena editora que tem 3 subsidiárias. O BD armazena
 - Um editor pode está trabalhando em mais de um livro e um livro pode ter mais de um editor e
 - Um pedido de venda pode ter mais de um título nele.
 
-## Entidades para o BD de uma livraria
+## Entidades para o BD de uma editora
 
 Lista preliminar de entidades (sem preocupação com as informações financeiras):
 
