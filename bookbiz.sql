@@ -33,7 +33,7 @@ select * from editores;
 create table subsidiarias (
 	subs_id number,
 	nome_subs varchar2(120) not null,
-	endereco varchar2(80),
+	endereco varchar2(80) not null,
 	cidade varchar2(16),
 	estado char(2),
 	constraint subsidiarias_pk primary key(subs_id)

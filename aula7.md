@@ -12,7 +12,8 @@
 
 ![Autores.](autores.png)
 
-##
+<!--
+## Código
 
 ```SQL
 create table autores (
@@ -34,7 +35,54 @@ insert into autores values (42, 'Silva', 'Jose da', '+55 11 454545', 'rua boa vi
 
 select au_pnome, au_snome, fone as Telefone from autores;
 ```
+-->
 
-### editores
+## editores
 
-![Editores](editores.png)
+![Editores.](editores.png)
+
+<!--
+## Código
+
+```SQL
+create table editores (
+	ed_id number,
+	ed_snome varchar2(20) not null,
+	ed_pnome varchar2(80),
+	fone varchar2(16),
+	endereco varchar2(80),
+	cidade varchar2(16),
+	estado char(2),
+	cep char(8),
+	constraint editores_pk primary key(ed_id)
+);
+```
+-->
+
+## subsidiarias
+
+![Subsidiárias.](subsidiarias.png)
+
+## titulos
+
+![Títulos.](titulos.png)
+
+## vendas
+
+![Vendas.](vendas.png)
+
+## tit_aut
+
+![Títulos-autores.](tit_aut.png)
+
+## tit_editores
+
+![Títulos-editores](tit_editores.png)
+
+## det_vendas
+
+![Detalhes-vendas](det_vendas.png)
+
+## dir_autorais
+
+![Direitos autorais](dir_autorais.png)
