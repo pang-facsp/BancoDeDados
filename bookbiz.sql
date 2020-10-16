@@ -10,7 +10,7 @@ create table autores (
 	constraint autores_pk primary key(au_id)
 );
 
-insert into autores values (42, 'Silva', 'Jose da', '+55 11 454545', 'rua boa vista, 555', 'São Paulo', 'SP', '01000000');
+-- insert into autores values (42, 'Silva', 'Jose da', '+55 11 454545', 'rua boa vista, 555', 'São Paulo', 'SP', '01000000');
 
 select au_pnome, au_snome, fone as Telefone from autores;
 
@@ -83,7 +83,7 @@ create table tit_aut (
   constraint tit_aut_fk2 foreign key(tit_id) references titulos 
 );
 
-insert into tit_aut values (42, 1, 1, 0.02);
+-- insert into tit_aut values (42, 1, 1, 0.02);
 
 select * from tit_aut;
 
@@ -201,6 +201,8 @@ end;
 -- alguns autores
 
 insert into autores (au_pnome, au_snome, cidade)
+  values ('Raymond', 'Smullyan', 'Princeton');
+insert into autores (au_pnome, au_snome, cidade)
   values ('Judith S.','Bowman','New York');
 insert into autores (au_pnome, au_snome, cidade)
   values ('Sandra L.','Emerson','New York');
@@ -315,6 +317,10 @@ insert into tit_aut (au_id, tit_id, au_ord)
 insert into tit_aut (au_id, tit_id)
   values ((select au_id from autores where au_snome = 'Ziviani'),
           (select tit_id from titulos where titulo like '%Algoritmos%'));
+		  
+insert into tit_aut (au_id, tit_id)
+  values ((select au_id from autores where au_snome = 'Smullyan'),
+          (select tit_id from titulos where titulo like 'What%'));
 
 -- titulos - editores
 

@@ -25,3 +25,8 @@ where
 
 - Esta instrução pede para o BD mostrar o prenome e sobrenome do autor dos livros que têm a palavra *HANDBOOK* no título.
 - A função `upper()` converte o texto da coluna `titulo` para maiúsculas, o operador `like` permite comparar a string com o metacaracter `%` que significa *vários ou nenhum caracter qualquer*. Assim, a comparação deve ser lida como *um título com a palavra handbook em qualquer posição e independente de maiúsculas, ou minúsculas*.
+
+## Exercícios
+
+1. Inserir dados que estão faltado para alguns livros
+2. Fazer algumas consultas (queries)
