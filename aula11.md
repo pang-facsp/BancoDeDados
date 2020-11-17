@@ -30,3 +30,30 @@ where
 
 1. Inserir dados que estão faltado para alguns livros
 2. Fazer algumas consultas (queries)
+
+## Uso do `IN` \(pertence a\)
+
+- Um operador de conjunto que podemos usar nos condicionais é o `in`.
+- A expressão `nome-de-coluna in (select ...)` é verdadeira se o valor da coluna é igual a um dos valores retornados pelo **sub-select**.
+- A expressão `nome-da-coluna not in (select ...)` é verdadeiro se o valor da coluna não é um dos valores retornados pelo **sub-select**.
+- Exemplo: Quais títulos estão sem autores na bookbiz
+
+```SQL
+select titulo from titulos
+where
+  tit_id not in (select tit_id from tit_aut)
+```
+
+## Exercício de reflexão
+
+1. Qual a diferença entre as 2 instruções abaixo:
+
+```SQL
+select titulo from titulos
+where tit_id in (select tit_id from tit_aut)
+```
+
+```SQL
+select titulo from titulos, tit_aut
+where titulos.tit_id = tit_aut.tit_id
+```

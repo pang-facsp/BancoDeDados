@@ -36,10 +36,11 @@ create table subsidiarias (
 	endereco varchar2(80) not null,
 	cidade varchar2(16),
 	estado char(2),
+	cep char(8),
 	constraint subsidiarias_pk primary key(subs_id)
 );
 
-insert into subsidiarias values (1, 'Livros de Computação', 'rua da Consolação, 54', 'São Paulo', 'SP');
+insert into subsidiarias values (1, 'Livros de Computação', 'rua da Consolação, 54', 'São Paulo', 'SP', '01111000');
 select * from subsidiarias;
 
 create table titulos (
@@ -59,7 +60,7 @@ create table titulos (
 
 ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
 
-insert into titulos values (1, 'What is the name of this book?', 'Lógica', 1, 50.10, 0, 5, 1, 'Lógica para todos.', '1978-1-1');
+insert into titulos values (1, 'What is the name of this book?', 'Lógica', 1, 20.50, 0, 5, 1, 'Lógica para todos.', '1978-1-1');
 
 select * from titulos;
 
@@ -258,29 +259,39 @@ insert into subsidiarias (nome_subs, endereco, cidade)
 
 -- alguns titulos
 
-insert into titulos (titulo, tipo, subs_id, contrato)
+insert into titulos (titulo, tipo, subs_id, contrato, preco, avanco, qtdd_vendas)
   values ('The Practical SQL Handbook: Using Structured Query Language','Computação',
-    (select subs_id from subsidiarias where nome_subs = 'Computação'), 1);
-insert into titulos (titulo, tipo, subs_id, contrato)
-  values ('Endgame Manual','Xadrez', (select subs_id from subsidiarias where nome_subs = 'Xadrez'), 1);
-insert into titulos (titulo, tipo, subs_id, contrato)
-  values ('Memórias Póstumas de Brás Cubas','', (select subs_id from subsidiarias where nome_subs = 'Romances'), 1);
-insert into titulos (titulo, tipo, subs_id, contrato)
-  values ('A guide to chess endings','Xadrez', (select subs_id from subsidiarias where nome_subs = 'Xadrez'), 1);
-insert into titulos (titulo, tipo, subs_id, contrato)
-  values ('O incrível mundo da Física Moderna','Física', (select subs_id from subsidiarias where nome_subs = 'Ficção'), 1);
-insert into titulos (titulo, tipo, subs_id, contrato)
-  values ('Rubinstein''s Chess Masterpieces/100 selected games','Xadrez', (select subs_id from subsidiarias where nome_subs = 'Xadrez'), 1);
-insert into titulos (titulo, tipo, subs_id, contrato)
-  values ('Pedagogia da autonomia','Educação', (select subs_id from subsidiarias where nome_subs = 'Computação'), 1);
-insert into titulos (titulo, tipo, subs_id, contrato)
-  values ('Introduction to Algorithms','Computação', (select subs_id from subsidiarias where nome_subs = 'Computação'), 1);
-insert into titulos (titulo, tipo, subs_id, contrato)
-  values ('The Hitch Hicker Guide To The Galaxy','Ficção', (select subs_id from subsidiarias where nome_subs = 'Ficção'), 1);
-insert into titulos (titulo, tipo, subs_id, contrato)
-  values ('O assassino e outras histórias','Ficção', (select subs_id from subsidiarias where nome_subs = 'Ficção'), 1);
-insert into titulos (titulo, tipo, subs_id, contrato)
-  values ('Projeto de Algoritmos com implementação em Java e C++','Computação', (select subs_id from subsidiarias where nome_subs = 'Computação'), 1);
+    (select subs_id from subsidiarias where nome_subs = 'Computação'), 1, 50.00, 5000, 1000);
+insert into titulos (titulo, tipo, subs_id, contrato, preco, avanco, qtdd_vendas)
+  values ('Endgame Manual','Xadrez', 
+    (select subs_id from subsidiarias where nome_subs = 'Xadrez'), 1, 35, 1000, 2000);
+insert into titulos (titulo, tipo, subs_id, contrato, preco, avanco, qtdd_vendas)
+  values ('Memórias Póstumas de Brás Cubas','',
+   (select subs_id from subsidiarias where nome_subs = 'Romances'), 1, 10, 100, 100000);
+insert into titulos (titulo, tipo, subs_id, contrato, preco, qtdd_vendas)
+  values ('A guide to chess endings','Xadrez',
+   (select subs_id from subsidiarias where nome_subs = 'Xadrez'), 1, 10, 2000);
+insert into titulos (titulo, tipo, subs_id, contrato, preco, avanco, qtdd_vendas)
+  values ('O incrível mundo da Física Moderna','Física',
+   (select subs_id from subsidiarias where nome_subs = 'Ficção'), 1, 10, 500, 500);
+insert into titulos (titulo, tipo, subs_id, contrato, preco, qtdd_vendas)
+  values ('Rubinstein''s Chess Masterpieces/100 selected games','Xadrez',
+   (select subs_id from subsidiarias where nome_subs = 'Xadrez'), 1, 10, 200);
+insert into titulos (titulo, tipo, subs_id, contrato, preco, avanco, qtdd_vendas)
+  values ('Pedagogia da autonomia','Educação',
+   (select subs_id from subsidiarias where nome_subs = 'Computação'), 1, 10, 100, 20000);
+insert into titulos (titulo, tipo, subs_id, contrato, preco, avanco, qtdd_vendas)
+  values ('Introduction to Algorithms','Computação',
+   (select subs_id from subsidiarias where nome_subs = 'Computação'), 1, 70, 2000, 1000);
+insert into titulos (titulo, tipo, subs_id, contrato, preco, avanco, qtdd_vendas)
+  values ('The Hitch Hicker Guide To The Galaxy','Ficção',
+   (select subs_id from subsidiarias where nome_subs = 'Ficção'), 1, 10, 100, 3000);
+insert into titulos (titulo, tipo, subs_id, contrato, preco, qtdd_vendas)
+  values ('O assassino e outras histórias','Ficção',
+   (select subs_id from subsidiarias where nome_subs = 'Ficção'), 1, 8, 500);
+insert into titulos (titulo, tipo, subs_id, contrato, preco, avanco, qtdd_vendas)
+  values ('Projeto de Algoritmos com implementação em Java e C++','Computação',
+   (select subs_id from subsidiarias where nome_subs = 'Computação'), 1, 35, 1000, 1500);
 
 -- titulos - autores
 
@@ -322,6 +333,35 @@ insert into tit_aut (au_id, tit_id)
   values ((select au_id from autores where au_snome = 'Smullyan'),
           (select tit_id from titulos where titulo like 'What%'));
 
+insert into tit_aut (au_id, tit_id)
+  values ((select au_id from autores where au_snome = 'Adams'),
+          (select tit_id from titulos where titulo like '%Hicker%'));
+
+insert into tit_aut (au_id, tit_id)
+  values ((select au_id from autores where au_pnome = 'Anton'),
+          (select tit_id from titulos where titulo like '%assassino%'));
+		  
+insert into tit_aut (au_id, tit_id)
+  values ((select au_id from autores where au_pnome = 'Mark'),
+          (select tit_id from titulos where titulo like '%Manual%'));
+		  
+insert into tit_aut (au_id, tit_id)
+  values ((select au_id from autores where au_snome = 'Gamow'),
+          (select tit_id from titulos where titulo like '%Física%'));
+		  
+insert into tit_aut (au_id, tit_id, au_ord)
+  values ((select au_id from autores where au_snome = 'Euwe'),
+          (select tit_id from titulos where titulo like '%endings%'), 1);
+
+insert into tit_aut (au_id, tit_id, au_ord)
+  values ((select au_id from autores where au_snome = 'Hooper'),
+          (select tit_id from titulos where titulo like '%endings%'), 2);
+
+insert into tit_aut (au_id, tit_id)
+  values ((select au_id from autores where au_snome = 'Kmoch'),
+          (select tit_id from titulos where titulo like '%Rubinstein%'));
+
+
 -- titulos - editores
 
 insert into tit_editores (ed_id, tit_id)
@@ -356,4 +396,7 @@ insert into det_vendas (ven_num, tit_id, qtdd_pdd)
   values ((select ven_num from vendas where po_num = 457),
   (select tit_id from titulos where titulo like 'Pedagogia%'), 2);
 
-
+update titulos
+  set subs_id = (select subs_id from subsidiarias where nome_subs = 'Computação')
+  where titulo like 'What%';
+ 

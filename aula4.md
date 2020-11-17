@@ -91,12 +91,12 @@ Bookbiz é um BD para uma pequena editora que tem 3 subsidiárias. O BD armazena
 ## Questões que o BD deve ser capaz de responder
 
 - Quais autores moram em São Paulo?
-- Quais livros de negócios custam mais do que R$ 199,00?
+- Quais livros de Computação custam mais do que R$ 49,00?
 - Quem escreveu mais livros?
-- Quanto devemos para o autor de *Vida sem Medo*?
-- Qual o valor médio que é dado adiantado para todos os livros de psicologia?
+- Quanto devemos para o autor de *What is the name of this book?*?
+- Qual o valor médio que é dado adiantado para todos os livros de pedagogia?
 - Como vai afetar o pagamento dos *direitos autorais* se aumentarmos todos os livros de receitas em 10%?
-- Como estão as vendas da subsidiária de computação?
+- Como estão as vendas da subsidiária de Computação?
 
 ## Regras de negócio e políticas da organização que afetam os dados
 
