@@ -209,8 +209,8 @@ insert into autores (au_pnome, au_snome, cidade)
   values ('Sandra L.','Emerson','New York');
 insert into autores (au_pnome, au_snome, cidade)
   values ('Marcy','Darnovsky','Los Angeles');
-insert into autores (au_pnome, au_snome, cidade)
-  values ('Machado','de Assis','Rio de Janeiro');
+insert into autores (au_pnome, au_snome, cidade,estado)
+  values ('Machado','de Assis','Rio de Janeiro','RJ');
 insert into autores (au_pnome, au_snome, cidade)
   values ('Douglas','Adams','Londres');
 insert into autores (au_pnome, au_snome, cidade)
@@ -233,10 +233,10 @@ insert into autores (au_pnome, au_snome, cidade)
   values ('Ronald L.','Rivest','Cambridge');
 insert into autores (au_pnome, au_snome, cidade)
   values ('Clifford','Stein','Hanover');
-insert into autores (au_pnome, au_snome, cidade)
-  values ('Paulo','Freire','São Paulo');
-insert into autores (au_pnome, au_snome, cidade)
-  values ('Nivio','Ziviani','Belo Horizonte');
+insert into autores (au_pnome, au_snome, cidade,estado)
+  values ('Paulo','Freire','São Paulo','SP');
+insert into autores (au_pnome, au_snome, cidade,estado)
+  values ('Nivio','Ziviani','Belo Horizonte','MG');
 
 -- alguns editores
 

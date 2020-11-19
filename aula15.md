@@ -71,5 +71,11 @@ WHERE
 - No lugar de fornecer uma tabela, é possível fornecer um subselect cujo resultado é a tabela onde será feita consulta.
 
 ```SQL
-SELECT ...
+SELECT au_snome, au_pnome
+FROM autores
+WHERE cidade = 'New York'
+AND au_id IN
+  (SELECT au_id
+   FROM tit_aut
+   WHERE au_ord = 2);
 ```

@@ -1,5 +1,5 @@
 
-all: aula1.pdf aula2.pdf aula3.pdf aula4.pdf aula5.pdf aula6.pdf aula7.pdf aula8.pdf aula9.pdf aula10.pdf aula11.pdf aula12.pdf aula13.pdf aula14.pdf aula15.pdf
+all: aula1.pdf aula2.pdf aula3.pdf aula4.pdf aula5.pdf aula6.pdf aula7.pdf aula8.pdf aula9.pdf aula10.pdf aula11.pdf aula12.pdf aula13.pdf aula14.pdf aula15.pdf aula16.pdf
 
 
 aula1.pdf: aula1.md
@@ -46,3 +46,6 @@ aula14.pdf: aula14.md head14.md
 
 aula15.pdf: aula15.md head15.md
 	pandoc -s -t beamer --slide-level=2 -f markdown head15.md aula15.md -o aula15.pdf
+
+aula16.pdf: aula16.md head16.md
+	pandoc -s -t beamer --slide-level=2 -f markdown head16.md aula16.md -o aula16.pdf
